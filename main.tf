@@ -83,6 +83,7 @@ resource "aws_network_interface" "primary" {
  resource "aws_eip" "this" {
   vpc               = true
   network_interface = aws_network_interface.primary.id
+  tags              = var.tags
 }
 
 resource "aws_instance" "this" {
